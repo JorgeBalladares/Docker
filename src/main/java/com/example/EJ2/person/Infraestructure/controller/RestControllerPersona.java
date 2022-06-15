@@ -1,4 +1,4 @@
-package com.example.EJ2.Persona.Infraestructure.controller;
+package com.example.EJ2.person.Infraestructure.controller;
 
 import com.example.EJ2.Profesor.domain.Entities.Profesor;
 import com.example.EJ2.Profesor.infraestructure.dto.OutPuts.ProfesorOutFullDTO;

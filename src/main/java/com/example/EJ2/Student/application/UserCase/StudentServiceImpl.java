@@ -1,7 +1,7 @@
 package com.example.EJ2.Student.application.UserCase;
 
-import com.example.EJ2.Persona.Domain.Entities.Persona;
-import com.example.EJ2.Persona.Domain.repositories.PersonaRepository;
+import com.example.EJ2.person.Domain.Entities.Person;
+import com.example.EJ2.person.Domain.repositories.PersonaRepository;
 import com.example.EJ2.Profesor.domain.Entities.Profesor;
 import com.example.EJ2.Profesor.domain.repositories.ProfesorRepository;
 import com.example.EJ2.Signature.domain.Entities.SignatureEntity;
@@ -37,7 +37,7 @@ public class StudentServiceImpl implements StudentService {
 
     public StudentOutputDTOFull addStudent(StudentInputDTO inputDTO) throws Exception {
         Optional<Profesor> profe = repoProf.findById(inputDTO.getProfesor());
-        Optional<Persona> persona = repoPerson.findById(Integer.parseInt(inputDTO.getPersona()));
+        Optional<Person> persona = repoPerson.findById(Integer.parseInt(inputDTO.getPersona()));
         Student student = model.map(inputDTO, Student.class);
         if (!profe.isPresent()) {
             throw new Exception("Profesor con ese id no existe");
@@ -45,8 +45,8 @@ public class StudentServiceImpl implements StudentService {
         if(!persona.isPresent()) {
             throw new Exception("persona con ese id no existe");
         }
-        CheckRoll(model.map(persona, Persona.class)); //Comprobación previa si esta asignado el id ya a otro objeto
-        student.setPersona(model.map(persona, Persona.class));
+        CheckRoll(model.map(persona, Person.class)); //Comprobación previa si esta asignado el id ya a otro objeto
+        student.setPersona(model.map(persona, Person.class));
         student.setProfesor(model.map(profe, Profesor.class));
         student.getPersona().setStudent(student); //al ser relacion onetoone hacemos que sea ciclico
         repoStudent.save(student);
@@ -71,7 +71,7 @@ public class StudentServiceImpl implements StudentService {
     /*----Procedimiento para comprobar si existe ya una asignacion al id,
     se establece en la entidad persona la relacion
                     @onetoone(mapped...)-------*/
-    public void CheckRoll (Persona person) throws Exception {
+    public void CheckRoll (Person person) throws Exception {
         if (person.getProfesor()!=null){
             throw new Exception("Persona asignada a un profesor");
         }

@@ -1,4 +1,4 @@
-package com.example.EJ2.Persona.Infraestructure.dto.Outputs;
+package com.example.EJ2.person.Infraestructure.dto.Outputs;
 
 import com.example.EJ2.Profesor.infraestructure.dto.OutPuts.ProfesorOutSimpleDTO;
 import com.example.EJ2.Student.infraestructure.dto.StudentSimpleDTO;
@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class PersonProfDTOOut {
+public class PersonStudODTOOut {
 
     private int id;
     private String usuario;

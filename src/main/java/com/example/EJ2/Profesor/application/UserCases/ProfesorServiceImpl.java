@@ -2,8 +2,8 @@ package com.example.EJ2.Profesor.application.UserCases;
 
 
 
-import com.example.EJ2.Persona.Domain.Entities.Persona;
-import com.example.EJ2.Persona.Domain.repositories.PersonaRepository;
+import com.example.EJ2.person.Domain.Entities.Person;
+import com.example.EJ2.person.Domain.repositories.PersonaRepository;
 import com.example.EJ2.Profesor.application.Services.ProfesorService;
 import com.example.EJ2.Profesor.domain.Entities.Profesor;
 import com.example.EJ2.Profesor.domain.repositories.ProfesorRepository;
@@ -27,11 +27,11 @@ public class ProfesorServiceImpl implements ProfesorService {
 
 
     public ProfesorOutFullDTO addProfesor(ProfesorInputDTO inputDTO) throws Exception {
-        Optional<Persona> persona = repoPerson.findById(Integer.parseInt(inputDTO.getPersona()));
+        Optional<Person> persona = repoPerson.findById(Integer.parseInt(inputDTO.getPersona()));
         if (persona.isPresent()){
-            CheckRoll(model.map(persona, Persona.class));
+            CheckRoll(model.map(persona, Person.class));
             Profesor profesor = model.map(inputDTO, Profesor.class);
-            profesor.setPersona(model.map(persona, Persona.class));
+            profesor.setPersona(model.map(persona, Person.class));
             profesor.getPersona().setProfesor(profesor);
             repoProf.save(profesor);
             return model.map(profesor, ProfesorOutFullDTO.class);
@@ -43,7 +43,7 @@ public class ProfesorServiceImpl implements ProfesorService {
     se establece en la entidad persona la relacion
                     @onetoone(mapped...)-------*/
 
-    public void CheckRoll (Persona person) throws Exception {
+    public void CheckRoll (Person person) throws Exception {
         if (person.getProfesor()!=null){
             throw new Exception("Persona asignada a un profesor");
         }

@@ -1,12 +1,13 @@
-package com.example.EJ2.Persona.Infraestructure.controller;
+package com.example.EJ2.person.Infraestructure.controller;
 
 
-import com.example.EJ2.Persona.Application.UserCases.PersonaServiceImpl;
-import com.example.EJ2.Persona.Infraestructure.dto.Inputs.PersonaInputDTO;
+import com.example.EJ2.person.Application.UserCases.PersonaServiceImpl;
+import com.example.EJ2.person.Infraestructure.dto.Inputs.PersonaInputDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-public class AddControl {
+public class AddPersonControl {
     @Autowired
     private PersonaServiceImpl servicio;
     @Autowired
@@ -31,6 +32,19 @@ public class AddControl {
         // return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
         //}
     }
+
+
+    @CrossOrigin (origins="https://cdpn.io")
+    @PostMapping (value = "/addperson")
+    public ResponseEntity<PersonaInputDTO> createPersonFrontal (@RequestBody @Valid PersonaInputDTO p1Dto) throws Exception {
+        //try {
+        PersonaInputDTO p = servicio.addPersona(p1Dto);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(p);
+        //}catch (Exception e) {
+        // return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
+        //}
+    }
+
 
 
 }

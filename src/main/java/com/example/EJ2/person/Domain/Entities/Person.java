@@ -1,4 +1,4 @@
-package com.example.EJ2.Persona.Domain.Entities;
+package com.example.EJ2.person.Domain.Entities;
 
 
 import com.example.EJ2.Profesor.domain.Entities.Profesor;
@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 
 
-public class Persona {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,25 +26,25 @@ public class Persona {
     @Column (name = "password")
     private String password;
 
-    @Column (name = "name", nullable = false)
+    @Column (name = "name")
     private String name;
 
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "company_mail", nullable = false)
-    private String company_mail;
+    @Column(name = "company_mail")
+    private String company_email;
 
-    @Column(name = "personal_mail", nullable = false)
+    @Column(name = "personal_email")
     private String personal_email;
 
-    @Column(name = "city", nullable = false)
+    @Column(name = "city")
     private String city;
 
-    @Column(name = "active", nullable = false)
+    @Column(name = "active")
     private Boolean active;
 
-    @Column(name = "created_date", nullable = false)
+    @Column(name = "created_date")
     private Date created_date;
 
     @Column(name = "imagen_url")

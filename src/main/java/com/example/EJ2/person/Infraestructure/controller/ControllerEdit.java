@@ -1,9 +1,9 @@
-package com.example.EJ2.Persona.Infraestructure.controller;
+package com.example.EJ2.person.Infraestructure.controller;
 
 
-import com.example.EJ2.Persona.Application.UserCases.PersonaServiceImpl;
-import com.example.EJ2.Persona.Infraestructure.dto.Inputs.PersonaInputDTO;
-import com.example.EJ2.Persona.Infraestructure.dto.Outputs.PersonaOutSimpleDTO;
+import com.example.EJ2.person.Application.UserCases.PersonaServiceImpl;
+import com.example.EJ2.person.Infraestructure.dto.Inputs.PersonaInputDTO;
+import com.example.EJ2.person.Infraestructure.dto.Outputs.PersonaOutSimpleDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

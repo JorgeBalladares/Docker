@@ -1,7 +1,7 @@
 package com.example.EJ2.Student.domain.Entities;
 
 
-import com.example.EJ2.Persona.Domain.Entities.Persona;
+import com.example.EJ2.person.Domain.Entities.Person;
 import com.example.EJ2.Profesor.domain.Entities.Profesor;
 import com.example.EJ2.Signature.domain.Entities.SignatureEntity;
 import com.example.EJ2.stringgenerator.StringPrefixedSequenceIdGenerator;
@@ -38,7 +38,7 @@ public class Student {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "persona")
-    private Persona persona;
+    private Person persona;
 
     @Column (name = "num_hours_week")
     private Integer num_hours_week;

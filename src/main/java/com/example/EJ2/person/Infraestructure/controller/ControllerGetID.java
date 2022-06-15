@@ -1,7 +1,7 @@
-package com.example.EJ2.Persona.Infraestructure.controller;
+package com.example.EJ2.person.Infraestructure.controller;
 
 
-import com.example.EJ2.Persona.Application.UserCases.PersonaServiceImpl;
+import com.example.EJ2.person.Application.UserCases.PersonaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

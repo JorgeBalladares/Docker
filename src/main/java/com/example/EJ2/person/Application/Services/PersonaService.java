@@ -1,8 +1,8 @@
-package com.example.EJ2.Persona.Application.Services;
+package com.example.EJ2.person.Application.Services;
 
 
-import com.example.EJ2.Persona.Infraestructure.dto.Inputs.PersonaInputDTO;
-import com.example.EJ2.Persona.Infraestructure.dto.Outputs.PersonaOutSimpleDTO;
+import com.example.EJ2.person.Infraestructure.dto.Inputs.PersonaInputDTO;
+import com.example.EJ2.person.Infraestructure.dto.Outputs.PersonaOutSimpleDTO;
 
 import java.util.List;
 

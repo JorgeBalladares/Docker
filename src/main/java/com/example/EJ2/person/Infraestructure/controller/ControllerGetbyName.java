@@ -1,8 +1,8 @@
-package com.example.EJ2.Persona.Infraestructure.controller;
+package com.example.EJ2.person.Infraestructure.controller;
 
 
-import com.example.EJ2.Persona.Application.UserCases.PersonaServiceImpl;
-import com.example.EJ2.Persona.Infraestructure.dto.Inputs.PersonaInputDTO;
+import com.example.EJ2.person.Application.UserCases.PersonaServiceImpl;
+import com.example.EJ2.person.Infraestructure.dto.Inputs.PersonaInputDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

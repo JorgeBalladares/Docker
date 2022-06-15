@@ -1,6 +1,6 @@
 package com.example.EJ2.Profesor.infraestructure.dto.OutPuts;
 
-import com.example.EJ2.Persona.Infraestructure.dto.Inputs.PersonaInputDTO;
+import com.example.EJ2.person.Infraestructure.dto.Inputs.PersonaInputDTO;
 import lombok.*;
 
 @Data
