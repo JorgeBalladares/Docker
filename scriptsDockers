@@ -1,0 +1,7 @@
+-Dmaven.test.failure.ignore
+
+docker build -t springboot-postgresql .
+
+docker run --network mynetwork --name postgres_test -ePOSTGRES_USER=postgres -e POSTGRES_PASSWORD=contrasena -e POSTGRES_DB=test postgres
+
+docker run --network mynetwork --name springTest -v ~/nginxlogs:/var/log/nginx -p 8081:8081 springboot-postgresql
